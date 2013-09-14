@@ -15,7 +15,7 @@ public class SetNicknameResponse extends Response {
 
     @Override
     public String getPostContent() {
-        return SET_NICKNAME_TYPE_KEY + "=" + type;
+        return RESPONSE_TYPE_KEY + "=" + RequestType.SetNickname + "&" + SET_NICKNAME_TYPE_KEY + "=" + type;
     }
 
     public enum SetNicknameResponseType {

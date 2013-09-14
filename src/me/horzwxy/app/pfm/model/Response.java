@@ -11,7 +11,7 @@ import java.util.Map;
 public abstract class Response {
 
     public static final String RESPONSE_TYPE_KEY = "response-type";
-    public static final String PACKAGE_NAME = Response.class.getName();
+    public static final String PACKAGE_NAME = Response.class.getPackage().getName();
 
     private static Map< String, String > splitResponse( String response ) {
         Map< String, String > result = new HashMap< String, String >();
@@ -30,9 +30,9 @@ public abstract class Response {
         try {
             Class< ? extends Response > responseClass =
                     (Class<? extends Response>) Class.forName(
-                            PACKAGE_NAME + "." + map.get("response-type") + "Response" );
-            Constructor< ? extends Response > constructor = responseClass.getConstructor(String.class);
-            result = constructor.newInstance(response);
+                            PACKAGE_NAME + "." + map.get(RESPONSE_TYPE_KEY) + "Response" );
+            Constructor< ? extends Response > constructor = responseClass.getConstructor(Map.class);
+            result = constructor.newInstance(map);
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

@@ -7,6 +7,7 @@ import java.util.Map;
  */
 public class LogInResponse extends Response {
 
+    public static final String LOG_IN_TYPE_KEY = "type";
     public static final String NICKNAME_KEY = "nickname";
 
     private LogInResponseType type;
@@ -18,7 +19,7 @@ public class LogInResponse extends Response {
     }
 
     public LogInResponse( Map< String, String > responsePairs ) {
-        type = LogInResponseType.valueOf( responsePairs.get( RESPONSE_TYPE_KEY ) );
+        type = LogInResponseType.valueOf( responsePairs.get( LOG_IN_TYPE_KEY ) );
         nickname = responsePairs.get( NICKNAME_KEY );
     }
 
@@ -32,7 +33,7 @@ public class LogInResponse extends Response {
 
     @Override
     public String getPostContent() {
-        return null;
+        return RESPONSE_TYPE_KEY + "=" + RequestType.LogIn + "&" + LOG_IN_TYPE_KEY + "=" + type.toString() + "&" + NICKNAME_KEY + "=" + nickname;
     }
 
     public enum LogInResponseType {
