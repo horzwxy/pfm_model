@@ -3,12 +3,12 @@ package me.horzwxy.app.pfm.model;
 /**
  * Created by horz on 9/13/13.
  */
-public class RequestInfo {
+public abstract class Request< T extends PFMData > {
 
-    private RequestType type;
-    private Stringizable attachment;
+    protected RequestType type;
+    protected T attachment;
 
-    public RequestInfo( RequestType type, Stringizable attachment ) {
+    public Request( RequestType type, T attachment ) {
         this.type = type;
         this.attachment = attachment;
     }
@@ -16,7 +16,9 @@ public class RequestInfo {
     public RequestType getRequestType() {
         return type;
     }
-    public Stringizable getAttachment() {
+    public T getAttachment() {
         return attachment;
     }
+
+    public abstract String getPostContent();
 }

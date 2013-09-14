@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class DiningInfo implements Stringizable {
+public class Dining implements PFMData {
 	
 	public static SimpleDateFormat dateFormat;
 	
@@ -31,17 +31,17 @@ public class DiningInfo implements Stringizable {
 		REJECTED;
 	}
 	
-	public String toKVPair() {
-		return "id=" + id
-				+ "&restaurant=" + restaurant
-				+ "&date=" + dateFormat.format(date)
-				+ "&cost=" + cost
-				+ "&participants=" + participantsToString()
-				+ "&specialCosts=" + userCostPairToString( specialCosts )
-				+ "&paids=" + userCostPairToString( paids )
-				+ "&author=" + author.nickname
-				+ "&state=" + state;
-	}
+//	public String toKVPair() {
+//		return "id=" + id
+//				+ "&restaurant=" + restaurant
+//				+ "&date=" + dateFormat.format(date)
+//				+ "&cost=" + cost
+//				+ "&participants=" + participantsToString()
+//				+ "&specialCosts=" + userCostPairToString( specialCosts )
+//				+ "&paids=" + userCostPairToString( paids )
+//				+ "&author=" + author.nickname
+//				+ "&state=" + state;
+//	}
 	
 	public String participantsToString() {
 		String result = "";

@@ -1,6 +1,6 @@
 package me.horzwxy.app.pfm.model;
 
-public class User implements Stringizable {
+public class User implements PFMData {
 
 	public String email;
 	public String nickname;
@@ -15,8 +15,8 @@ public class User implements Stringizable {
 		return "[User] email=\"" + email + "\" nickname=\"" + nickname + "\"";
 	}
 	
-	@Override
-	public String toKVPair() {
-		return "email=" + email + "&nickname=" + nickname;
-	}
+//	@Override
+//	public String toKVPair() {
+//		return "email=" + email + "&nickname=" + nickname;
+//	}
 }
