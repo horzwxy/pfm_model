@@ -13,6 +13,10 @@ public class SetNicknameResponse extends Response {
         this.type = type;
     }
 
+    public SetNicknameResponseType getType() {
+        return type;
+    }
+
     @Override
     public String getPostContent() {
         return RESPONSE_TYPE_KEY + "=" + RequestType.SetNickname + "&" + SET_NICKNAME_TYPE_KEY + "=" + type;
