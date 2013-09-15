@@ -15,7 +15,10 @@ public abstract class Response {
 
     private static Map< String, String > splitResponse( String response ) {
         Map< String, String > result = new HashMap< String, String >();
-        String[] parts = response.split("&");
+        String[] parts = { response };
+        if( response.contains( "&" ) ) {
+            parts = response.split("&");
+        }
         for( String part : parts ) {
             String key = part.split("=")[0];
             String value = part.split("=")[1];

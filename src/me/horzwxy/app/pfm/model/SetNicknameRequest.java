@@ -5,6 +5,7 @@ package me.horzwxy.app.pfm.model;
  */
 public class SetNicknameRequest extends Request< User > {
 
+    public static final String EMAIL_KEY = "email";
     public static final String NICKNAME_KEY = "nickname";
 
     public SetNicknameRequest(User attachment) {
@@ -13,6 +14,6 @@ public class SetNicknameRequest extends Request< User > {
 
     @Override
     public String getPostContent() {
-        return NICKNAME_KEY + "=" + attachment.nickname;
+        return EMAIL_KEY + attachment.email + "&" + NICKNAME_KEY + "=" + attachment.nickname;
     }
 }
