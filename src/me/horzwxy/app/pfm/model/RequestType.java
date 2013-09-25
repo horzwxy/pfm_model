@@ -7,13 +7,15 @@ import java.util.HashMap;
  */
 public enum RequestType {
     LogIn,
-    SetNickname;
+    SetNickname,
+    AddDiningInfo;
 
     private static HashMap< RequestType, String > servletPatternMap = new HashMap< RequestType, String>();
 
     static {
         servletPatternMap.put( LogIn, "/login" );
         servletPatternMap.put( SetNickname, "/setnickname" );
+        servletPatternMap.put( AddDiningInfo, "/adddininginfo" );
     }
 
     public String getServletPattern() {

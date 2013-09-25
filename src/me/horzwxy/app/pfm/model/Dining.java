@@ -11,8 +11,20 @@ public class Dining implements PFMData {
 	
 	public static SimpleDateFormat dateFormat;
 	
+	private static int accu_int = 0;
+	
 	static {
 		dateFormat = new SimpleDateFormat( "yyyy-MM-dd-hh-mm" );
+	}
+	
+	public Dining() {
+		this.id = accu_int++;
+		this.state = DiningInfoState.NOT_APPROVED;
+	}
+	
+	public Dining( int id ) {
+		this.id = id;
+		this.state = DiningInfoState.NOT_APPROVED;
 	}
 	
 	public int id;
