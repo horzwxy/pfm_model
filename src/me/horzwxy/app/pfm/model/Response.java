@@ -31,8 +31,6 @@ public abstract class Response {
         Map< String, String > map = splitResponse( response );
         Response result = null;
         try {
-            // todo
-            System.out.println( map.get(RESPONSE_TYPE_KEY) );
             Class< ? extends Response > responseClass =
                     (Class<? extends Response>) Class.forName(
                             PACKAGE_NAME + "." + map.get(RESPONSE_TYPE_KEY) + "Response" );

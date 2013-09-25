@@ -14,6 +14,6 @@ public class SetNicknameRequest extends Request< User > {
 
     @Override
     public String getPostContent() {
-        return EMAIL_KEY + attachment.email + "&" + NICKNAME_KEY + "=" + attachment.nickname;
+        return EMAIL_KEY + "=" + attachment.email + "&" + NICKNAME_KEY + "=" + attachment.nickname;
     }
 }
