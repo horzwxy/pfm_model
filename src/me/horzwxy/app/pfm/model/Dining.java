@@ -31,18 +31,6 @@ public class Dining implements PFMData {
 		REJECTED;
 	}
 	
-//	public String toKVPair() {
-//		return "id=" + id
-//				+ "&restaurant=" + restaurant
-//				+ "&date=" + dateFormat.format(date)
-//				+ "&cost=" + cost
-//				+ "&participants=" + participantsToString()
-//				+ "&specialCosts=" + userCostPairToString( specialCosts )
-//				+ "&paids=" + userCostPairToString( paids )
-//				+ "&author=" + author.nickname
-//				+ "&state=" + state;
-//	}
-	
 	public String participantsToString() {
 		String result = "";
 		for( User user : participants ) {
@@ -60,7 +48,7 @@ public class Dining implements PFMData {
 		return result;
 	}
 	
-	public String userCostPairToString( Map< User, Integer > map ) {
+	public String userCostMapToString( Map< User, Integer > map ) {
 		String result = "";
 		Set< User > keySet = map.keySet();
 		for( User user : keySet ) {
@@ -69,7 +57,7 @@ public class Dining implements PFMData {
 		return result.substring( 0, result.length() - 1 );
 	}
 	
-	public static Map< User, Integer > getUserCostPairFromString( String string ) {
+	public static Map< User, Integer > getUserCostMapFromString( String string ) {
 		String[] pairs = string.split( "," );
 		Map< User, Integer > result = new HashMap< User, Integer >();
 		for( String pair : pairs ) {
