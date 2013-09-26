@@ -20,8 +20,15 @@ public abstract class Response {
             parts = response.split("&");
         }
         for( String part : parts ) {
+            String[] subparts = part.split("=");
             String key = part.split("=")[0];
-            String value = part.split("=")[1];
+            String value = "";
+            if( subparts.length != 1 ) {
+                value = part.split("=")[1];
+            }
+            else {
+                value = null;
+            }
             result.put( key, value );
         }
         return result;

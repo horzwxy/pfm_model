@@ -15,6 +15,6 @@ public class AddContactRequest extends Request< ContactInfo > {
     @Override
     public String getPostContent() {
         return OWNER_KEY + "=" + attachment.owner.nickname
-                + FRIEND_KEY + "=" + attachment.friend.nickname;
+                + "&" + FRIEND_KEY + "=" + attachment.friend.nickname;
     }
 }

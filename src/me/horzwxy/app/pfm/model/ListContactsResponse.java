@@ -19,9 +19,12 @@ public class ListContactsResponse extends Response {
 
     public ListContactsResponse( Map< String, String > map ) {
         contactList = new ArrayList<User>();
-        String[] contactString = map.get( CONTACTLIST_KEY ).split( "," );
-        for( String nickname : contactString ) {
-            contactList.add( new User( null, nickname ) );
+        String listString = map.get( CONTACTLIST_KEY );
+        if( listString != null ) {
+            String[] contactString = listString.split( "," );
+            for( String nickname : contactString ) {
+                contactList.add( new User( null, nickname ) );
+            }
         }
     }
 
@@ -32,9 +35,12 @@ public class ListContactsResponse extends Response {
     @Override
     public String getPostContent() {
         String contactString = "";
+        if( contactList.size() == 0 ) {
+        	return RESPONSE_TYPE_KEY + "=" + RequestType.ListContacts.toString() + "&" + CONTACTLIST_KEY + "=";
+        }
         for( User contact : contactList ) {
             contactString += contact.nickname + ",";
         }
-        return CONTACTLIST_KEY + "=" + contactString.substring( 0, contactString.length() - 1 );
+        return RESPONSE_TYPE_KEY + "=" + RequestType.ListContacts.toString() + "&" + CONTACTLIST_KEY + "=" + contactString.substring( 0, contactString.length() - 1 );
     }
 }

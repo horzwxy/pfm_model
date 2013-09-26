@@ -16,7 +16,7 @@ public class AddContactResponse extends Response {
     }
 
     public AddContactResponse( Map< String, String > map ) {
-        this.type = AddContactResponseType.valueOf( map.get( RESPONSE_TYPE_KEY ) );
+        this.type = AddContactResponseType.valueOf( map.get( ADD_CONTACT_TYPE ) );
     }
 
     public AddContactResponseType getType() {
@@ -25,7 +25,7 @@ public class AddContactResponse extends Response {
 
     @Override
     public String getPostContent() {
-        return ADD_CONTACT_TYPE + "=" + type.toString();
+        return RESPONSE_TYPE_KEY + "=" + RequestType.AddContact.toString() + "&" + ADD_CONTACT_TYPE + "=" + type.toString();
     }
 
     public enum AddContactResponseType {
