@@ -16,8 +16,13 @@ public class AddDiningInfoRequest extends Request< Dining > {
 	
 	@Override
 	public String getPostContent() {
-		// TODO Auto-generated method stub
-		return null;
+		return RESTAURANT_KEY + "=" + attachment.restaurant
+                + "&" + DATE_KEY + "=" + Dining.dateFormat.format( attachment.date )
+                + "&" + COST_KEY + "=" + attachment.cost
+                + "&" + PARTICIPANTS_KEY + "=" + attachment.participantsToString()
+                + "&" + SPECIALCOSTS_KEY + "=" + attachment.userCostMapToString( attachment.specialCosts )
+                + "&" + PAIDS_KEY + "=" + attachment.userCostMapToString( attachment.paids )
+                + "&" + AUTHOR_KEY + "=" + attachment.author.nickname;
 	}
 
 }

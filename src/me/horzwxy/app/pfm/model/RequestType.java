@@ -8,7 +8,9 @@ import java.util.HashMap;
 public enum RequestType {
     LogIn,
     SetNickname,
-    AddDiningInfo;
+    AddDiningInfo,
+    ListContacts,
+    AddContact;
 
     private static HashMap< RequestType, String > servletPatternMap = new HashMap< RequestType, String>();
 
@@ -16,6 +18,8 @@ public enum RequestType {
         servletPatternMap.put( LogIn, "/login" );
         servletPatternMap.put( SetNickname, "/setnickname" );
         servletPatternMap.put( AddDiningInfo, "/adddininginfo" );
+        servletPatternMap.put( ListContacts, "/listcontacts" );
+        servletPatternMap.put( AddContact, "/addcontact" );
     }
 
     public String getServletPattern() {
