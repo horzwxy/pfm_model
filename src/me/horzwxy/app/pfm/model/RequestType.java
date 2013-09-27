@@ -10,7 +10,8 @@ public enum RequestType {
     SetNickname,
     AddDiningInfo,
     ListContacts,
-    AddContact;
+    AddContact,
+    ListDining;
 
     private static HashMap< RequestType, String > servletPatternMap = new HashMap< RequestType, String>();
 
@@ -20,6 +21,7 @@ public enum RequestType {
         servletPatternMap.put( AddDiningInfo, "/adddininginfo" );
         servletPatternMap.put( ListContacts, "/listcontacts" );
         servletPatternMap.put( AddContact, "/addcontact" );
+        servletPatternMap.put( ListDining, "/listdining" )
     }
 
     public String getServletPattern() {
