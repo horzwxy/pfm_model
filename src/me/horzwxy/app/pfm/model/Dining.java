@@ -14,17 +14,22 @@ public class Dining implements PFMData {
 	private static int accu_int = 0;
 	
 	static {
-		dateFormat = new SimpleDateFormat( "yyyy-MM-dd-hh-mm" );
+		dateFormat = new SimpleDateFormat( "yyyy-MM-dd-HH-mm" );
 	}
-	
+
+    {
+        this.state = DiningInfoState.NOT_APPROVED;
+        participants = new ArrayList<User>();
+        specialCosts = new HashMap<User, Integer>();
+        paids = new HashMap<User, Integer>();
+    }
+
 	public Dining() {
 		this.id = accu_int++;
-		this.state = DiningInfoState.NOT_APPROVED;
 	}
 	
 	public Dining( int id ) {
 		this.id = id;
-		this.state = DiningInfoState.NOT_APPROVED;
 	}
 	
 	public int id;
@@ -63,6 +68,9 @@ public class Dining implements PFMData {
 	public String userCostMapToString( Map< User, Integer > map ) {
 		String result = "";
 		Set< User > keySet = map.keySet();
+        if( keySet.size() == 0 ) {
+            return result;
+        }
 		for( User user : keySet ) {
 			result += user.nickname + "#" + specialCosts.get( user ) + ",";
 		}
@@ -72,6 +80,9 @@ public class Dining implements PFMData {
 	public static Map< User, Integer > getUserCostMapFromString( String string ) {
 		String[] pairs = string.split( "," );
 		Map< User, Integer > result = new HashMap< User, Integer >();
+		if( !string.contains( "," ) ) {
+			return result;
+		}
 		for( String pair : pairs ) {
 			String[] elements = pair.split( "#" );
 			result.put( new User( null, elements[0] ), Integer.parseInt( elements[1] ) );

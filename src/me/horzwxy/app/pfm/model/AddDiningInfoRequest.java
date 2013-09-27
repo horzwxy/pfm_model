@@ -16,7 +16,7 @@ public class AddDiningInfoRequest extends Request< Dining > {
 	
 	@Override
 	public String getPostContent() {
-		return RESTAURANT_KEY + "=" + attachment.restaurant
+        return RESTAURANT_KEY + "=" + attachment.restaurant
                 + "&" + DATE_KEY + "=" + Dining.dateFormat.format( attachment.date )
                 + "&" + COST_KEY + "=" + attachment.cost
                 + "&" + PARTICIPANTS_KEY + "=" + attachment.participantsToString()
