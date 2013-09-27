@@ -78,12 +78,15 @@ public class Dining implements PFMData {
 	}
 	
 	public static Map< User, Integer > getUserCostMapFromString( String string ) {
+		if( string == null ) {
+			return new HashMap< User, Integer >();
+		}
 		String[] pairs = string.split( "," );
 		Map< User, Integer > result = new HashMap< User, Integer >();
-		if( !string.contains( "," ) ) {
-			return result;
-		}
 		for( String pair : pairs ) {
+			if( !pair.contains( "#" ) ) {
+				continue;
+			}
 			String[] elements = pair.split( "#" );
 			result.put( new User( null, elements[0] ), Integer.parseInt( elements[1] ) );
 		}
