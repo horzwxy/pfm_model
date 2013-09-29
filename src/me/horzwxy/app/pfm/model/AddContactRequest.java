@@ -5,16 +5,12 @@ package me.horzwxy.app.pfm.model;
  */
 public class AddContactRequest extends Request< ContactInfo > {
 
-    public static final String OWNER_KEY = "owner";
-    public static final String FRIEND_KEY = "friend";
-
     public AddContactRequest( ContactInfo attachment ) {
-        super( RequestType.AddContact, attachment );
+        super( attachment );
     }
 
-    @Override
-    public String getPostContent() {
-        return OWNER_KEY + "=" + attachment.owner.nickname
-                + "&" + FRIEND_KEY + "=" + attachment.friend.nickname;
-    }
+  @Override
+  public String getServletPattern() {
+    return "/addcontact";
+  }
 }

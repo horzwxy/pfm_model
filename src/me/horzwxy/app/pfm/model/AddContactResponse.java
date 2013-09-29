@@ -11,14 +11,6 @@ public class AddContactResponse extends Response {
 
     private AddContactResponseType type;
 
-    public AddContactResponse( AddContactResponseType type ) {
-        this.type = type;
-    }
-
-    public AddContactResponse( Map< String, String > map ) {
-        this.type = AddContactResponseType.valueOf( map.get( ADD_CONTACT_TYPE ) );
-    }
-
     public AddContactResponseType getType() {
         return type;
     }

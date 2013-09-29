@@ -11,6 +11,7 @@ public class User implements PFMData, Serializable {
 	public User( String email, String nickname, String accountType ) {
 		this.accountName = email;
 		this.nickname = nickname;
+    this.accountType = accountType;
 	}
 
   @Override

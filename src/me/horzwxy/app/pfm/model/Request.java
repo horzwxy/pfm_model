@@ -1,24 +1,27 @@
 package me.horzwxy.app.pfm.model;
 
+import com.google.gson.Gson;
+
 /**
  * Created by horz on 9/13/13.
  */
-public abstract class Request< T extends PFMData > {
+public abstract class Request<T extends PFMData> {
 
-    protected RequestType type;
-    protected T attachment;
+  protected T attachment;
+  protected Gson gson;
 
-    public Request( RequestType type, T attachment ) {
-        this.type = type;
-        this.attachment = attachment;
-    }
+  public Request(T attachment) {
+    this.gson = new Gson();
+    this.attachment = attachment;
+  }
 
-    public RequestType getRequestType() {
-        return type;
-    }
-    public T getAttachment() {
-        return attachment;
-    }
+  public final T getAttachment() {
+    return attachment;
+  }
 
-    public abstract String getPostContent();
+  public final String getPostContent() {
+    return gson.toJson(attachment);
+  }
+
+  public abstract String getServletPattern();
 }
