@@ -4,31 +4,32 @@ import java.io.Serializable;
 
 public class User implements PFMData, Serializable {
 
-	public String email;
+	public String accountName;
 	public String nickname;
+  public String accountType;
 	
-	public User( String email, String nickname ) {
-		this.email = email;
+	public User( String email, String nickname, String accountType ) {
+		this.accountName = email;
 		this.nickname = nickname;
 	}
-	
-	@Override
-	public String toString() {
-		return "[User] email=\"" + email + "\" nickname=\"" + nickname + "\"";
-	}
 
-    @Override
-    public boolean equals( Object o ) {
-        boolean result = false;
-        if( o instanceof User ) {
-            if( this.email != null ) {
-                result |= this.email.equals( ((User) o).email );
+  @Override
+  public boolean equals( Object o ) {
+      boolean result = false;
+      if( o instanceof User ) {
+        User user = ( User )o;
+          if( this.accountType != null ) {
+            if( !this.accountType.equals( user.accountType ) ) {
+              return false;
             }
-            if( this.nickname != null ) {
-                result |= this.nickname.equals( ((User) o).nickname );
-            }
-        }
-        return result;
-    }
-
+          }
+          if( this.accountName != null ) {
+              result |= this.accountName.equals( user.accountName );
+          }
+          if( this.nickname != null ) {
+              result |= this.nickname.equals( user.nickname );
+          }
+      }
+      return result;
+  }
 }

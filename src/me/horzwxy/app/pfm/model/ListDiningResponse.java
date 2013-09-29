@@ -5,7 +5,6 @@ package me.horzwxy.app.pfm.model;
  */
 public class ListDiningResponse extends Response {
 
-    public static final String
 
     @Override
     public String getPostContent() {

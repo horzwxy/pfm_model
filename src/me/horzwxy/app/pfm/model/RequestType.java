@@ -21,7 +21,7 @@ public enum RequestType {
         servletPatternMap.put( AddDiningInfo, "/adddininginfo" );
         servletPatternMap.put( ListContacts, "/listcontacts" );
         servletPatternMap.put( AddContact, "/addcontact" );
-        servletPatternMap.put( ListDining, "/listdining" )
+        servletPatternMap.put( ListDining, "/listdining" );
     }
 
     public String getServletPattern() {

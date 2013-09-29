@@ -60,7 +60,7 @@ public class Dining implements PFMData {
 		String[] nicknames = string.split( "," );
 		ArrayList< User > result = new ArrayList< User >();
 		for( String nickname : nicknames ) {
-			result.add( new User( null, nickname ) );
+			result.add( new User( null, nickname, null ) );
 		}
 		return result;
 	}
@@ -88,7 +88,7 @@ public class Dining implements PFMData {
 				continue;
 			}
 			String[] elements = pair.split( "#" );
-			result.put( new User( null, elements[0] ), Integer.parseInt( elements[1] ) );
+			result.put( new User( null, elements[0], null ), Integer.parseInt( elements[1] ) );
 		}
 		return result;
 	}

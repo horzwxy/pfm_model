@@ -23,7 +23,7 @@ public class ListContactsResponse extends Response {
         if( listString != null ) {
             String[] contactString = listString.split( "," );
             for( String nickname : contactString ) {
-                contactList.add( new User( null, nickname ) );
+                contactList.add( new User( null, nickname, null ) );
             }
         }
     }

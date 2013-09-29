@@ -13,6 +13,6 @@ public class LogInRequest extends Request< User > {
 
     @Override
     public String getPostContent() {
-        return EMAIL_KEY + "=" + attachment.email;
+        return EMAIL_KEY + "=" + attachment.accountName;
     }
 }
