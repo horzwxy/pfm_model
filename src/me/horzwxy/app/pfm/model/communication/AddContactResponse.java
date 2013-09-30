@@ -1,6 +1,4 @@
-package me.horzwxy.app.pfm.model;
-
-import java.util.Map;
+package me.horzwxy.app.pfm.model.communication;
 
 /**
  * Created by horz on 9/26/13.

@@ -1,4 +1,4 @@
-package me.horzwxy.app.pfm.model;
+package me.horzwxy.app.pfm.model.communication;
 
 /**
  * Created by horzwxy on 13-9-27.

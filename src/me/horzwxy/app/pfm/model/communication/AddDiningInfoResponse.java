@@ -1,4 +1,4 @@
-package me.horzwxy.app.pfm.model;
+package me.horzwxy.app.pfm.model.communication;
 
 import java.util.Map;
 
@@ -11,12 +11,12 @@ public class AddDiningInfoResponse extends Response {
 
     private AddDiningInfoType type;
 
-    public AddDiningInfoResponse( AddDiningInfoType type ) {
+    public AddDiningInfoResponse(AddDiningInfoType type) {
         this.type = type;
     }
 
-    public AddDiningInfoResponse( Map< String, String > map ) {
-        this.type = AddDiningInfoType.valueOf( map.get( ADD_DINING_RESULT_TYPE ) );
+    public AddDiningInfoResponse(Map<String, String> map) {
+        this.type = AddDiningInfoType.valueOf(map.get(ADD_DINING_RESULT_TYPE));
     }
 
     public AddDiningInfoType getType() {

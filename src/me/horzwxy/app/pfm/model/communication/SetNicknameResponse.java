@@ -1,6 +1,9 @@
-package me.horzwxy.app.pfm.model;
+package me.horzwxy.app.pfm.model.communication;
 
 import java.util.Map;
+
+import me.horzwxy.app.pfm.model.communication.RequestType;
+import me.horzwxy.app.pfm.model.communication.Response;
 
 /**
  * Created by horz on 9/14/13.
@@ -11,12 +14,12 @@ public class SetNicknameResponse extends Response {
 
     private SetNicknameResponseType type;
 
-    public SetNicknameResponse( SetNicknameResponseType type ) {
+    public SetNicknameResponse(SetNicknameResponseType type) {
         this.type = type;
     }
 
-    public SetNicknameResponse( Map< String, String > responsePairs ) {
-        type = SetNicknameResponseType.valueOf( responsePairs.get( SET_NICKNAME_TYPE_KEY ) );
+    public SetNicknameResponse(Map<String, String> responsePairs) {
+        type = SetNicknameResponseType.valueOf(responsePairs.get(SET_NICKNAME_TYPE_KEY));
     }
 
     public SetNicknameResponseType getType() {
