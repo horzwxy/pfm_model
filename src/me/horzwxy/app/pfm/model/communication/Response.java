@@ -5,12 +5,7 @@ import com.google.gson.Gson;
 /**
  * Created by horz on 9/13/13.
  */
-public abstract class Response<T extends Response> {
+public abstract class Response {
 
-    protected Gson gson;
 
-    public T parseResponse(String gsonString) {
-        // should call from child class
-        return (T)gson.fromJson(gsonString, getClass());
-    }
 }

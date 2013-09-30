@@ -7,23 +7,12 @@ import me.horzwxy.app.pfm.model.data.PFMData;
 /**
  * Created by horz on 9/13/13.
  */
-public abstract class Request<T extends PFMData> {
+public class Request< T extends PFMData > {
 
-    protected T attachment;
-    protected Gson gson;
+    private T attachment;
+    private RequestType type;
 
     public Request(T attachment) {
-        this.gson = new Gson();
         this.attachment = attachment;
     }
-
-    public final T getAttachment() {
-        return attachment;
-    }
-
-    public final String getPostContent() {
-        return gson.toJson(attachment);
-    }
-
-    public abstract String getServletPattern();
 }
