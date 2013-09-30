@@ -10,6 +10,7 @@ public abstract class Response<T extends Response> {
     protected Gson gson;
 
     public T parseResponse(String gsonString) {
-        return null;
+        // should call from child class
+        return (T)gson.fromJson(gsonString, getClass());
     }
 }
