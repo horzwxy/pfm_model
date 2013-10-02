@@ -8,7 +8,7 @@ public class Transaction implements PFMData {
     public int id;
     public User borrower;
     public User lender;
-    public int cost;
+    public Cost cost;
     public TransactionState state;
 
     public enum TransactionState {

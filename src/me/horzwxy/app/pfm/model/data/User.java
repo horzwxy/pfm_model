@@ -6,12 +6,20 @@ public class User implements PFMData, Serializable {
 
     public String accountName;
     public String nickname;
-    public String accountType;
+    public String accountType;  // maybe Google, Renren, Evernote or something else
 
-    public User(String email, String nickname, String accountType) {
-        this.accountName = email;
+    public User(String accountName, String nickname, String accountType) {
+        this.accountName = accountName;
         this.nickname = nickname;
         this.accountType = accountType;
+    }
+    
+    public User( String accountName, String nickname ) {
+    	this( accountName, nickname, null );
+    }
+    
+    public User( String nickname ) {
+    	this( null, nickname );
     }
 
     @Override

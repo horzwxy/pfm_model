@@ -5,7 +5,11 @@ import me.horzwxy.app.pfm.model.data.User;
 /**
  * Created by horz on 10/1/13.
  */
-public class LogInRequestContent implements RequestContent {
+public class LogInRequest extends Request {
 
     public User user;
+
+    public LogInRequest( User user ) {
+        this.user = user;
+    }
 }

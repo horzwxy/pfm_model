@@ -1,0 +1,13 @@
+package me.horzwxy.app.pfm.model.communication;
+
+/**
+ * Created by horz on 10/2/13.
+ */
+public class GetProfileRequest extends Request {
+
+    public String nickname;
+
+    public GetProfileRequest( String nickname ) {
+        this.nickname = nickname;
+    }
+}

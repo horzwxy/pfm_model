@@ -12,16 +12,16 @@ public class Dining implements PFMData {
     public Date date;
     public int cost;
     public ArrayList<User> participants;
-    public Map<User, Integer> specialCosts;
-    public Map<User, Integer> paids;
+    public Map<User, Cost> specialCosts;
+    public Map<User, Cost> paids;
     public User author;
     public DiningState state;
 
     public Dining() {
         this.state = DiningState.NOT_APPROVED;
         participants = new ArrayList<User>();
-        specialCosts = new HashMap<User, Integer>();
-        paids = new HashMap<User, Integer>();
+        specialCosts = new HashMap<User, Cost>();
+        paids = new HashMap<User, Cost>();
     }
 
     public enum DiningState {
