@@ -3,30 +3,59 @@ package me.horzwxy.app.pfm.model.data;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 
-public class Dining implements PFMData {
+public class Dining {
+
+    public static final int UNDEFINED_ID = -1;
 
     public int id;
-    public String restaurant;
+    public Restaurant restaurant;
     public Date date;
-    public int cost;
-    public ArrayList<User> participants;
-    public Map<User, Cost> specialCosts;
-    public Map<User, Cost> paids;
+    public Cost cost;
+    public UserList participants;
+    public UserCostMap specialCosts;
+    public UserCostMap paids;
     public User author;
     public DiningState state;
 
+    public Dining( int id,
+                   Restaurant restaurant,
+                   Date date,
+                   Cost cost,
+                   UserList participants,
+                   UserCostMap specialCosts,
+                   UserCostMap paids,
+                   User author,
+                   DiningState state ) {
+        this.id = id;
+        this.restaurant = restaurant;
+        this.date = date;
+        this.cost = cost;
+        this.participants = participants;
+        this.specialCosts = specialCosts;
+        this.paids = paids;
+        this.author = author;
+        this.state = state;
+    }
+
+    public Dining( Restaurant restaurant,
+                   Date date,
+                   Cost cost,
+                   UserList participants,
+                   UserCostMap specialCosts,
+                   UserCostMap paids,
+                   User author ) {
+        this( UNDEFINED_ID, restaurant, date, cost, participants, specialCosts, paids, author, DiningState.UNDEFINED );
+    }
+
     public Dining() {
-        this.state = DiningState.NOT_APPROVED;
-        participants = new ArrayList<User>();
-        specialCosts = new HashMap<User, Cost>();
-        paids = new HashMap<User, Cost>();
+        this( null, null, null, new UserList(), new UserCostMap(), new UserCostMap(), null );
     }
 
     public enum DiningState {
-        NOT_APPROVED,
+        NOT_APPROVED_YET,
         APPROVED,
-        REJECTED;
+        REJECTED,
+        UNDEFINED;
     }
 }

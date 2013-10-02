@@ -12,4 +12,9 @@ public class SetNicknameRequest extends Request {
     public SetNicknameRequest( User user ) {
         this.user = user;
     }
+
+    @Override
+    public String getServlePattern() {
+        return "/setnickname";
+    }
 }

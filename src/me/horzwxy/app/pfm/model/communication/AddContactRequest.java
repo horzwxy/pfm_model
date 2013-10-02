@@ -1,5 +1,6 @@
 package me.horzwxy.app.pfm.model.communication;
 
+import me.horzwxy.app.pfm.model.data.ContactInfo;
 import me.horzwxy.app.pfm.model.data.User;
 
 /**
@@ -7,11 +8,20 @@ import me.horzwxy.app.pfm.model.data.User;
  */
 public class AddContactRequest extends Request {
 
-    public User owner;
-    public User friend;
+    public String ownerNickname;
+    public String friendNickname;
 
-    public AddContactRequest( User owner, User friend ) {
-        this.owner = owner;
-        this.friend = friend;
+    public AddContactRequest( ContactInfo info ) {
+        this( info.owner.nickname, info.friend.nickname );
+    }
+
+    public AddContactRequest( String ownerNickname, String friendNickname ) {
+        this.ownerNickname = ownerNickname;
+        this.friendNickname = friendNickname;
+    }
+
+    @Override
+    public String getServlePattern() {
+        return "/addcontact";
     }
 }

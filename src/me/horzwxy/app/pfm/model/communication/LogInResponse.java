@@ -8,11 +8,11 @@ import me.horzwxy.app.pfm.model.data.User;
 public class LogInResponse extends Response {
 
     public ResultType type;
-    public User user;
+    public String nickname;
 
-    public LogInResponse( ResultType type, User user ) {
+    public LogInResponse( ResultType type, String nickname ) {
         this.type = type;
-        this.user = user;
+        this.nickname = nickname;
     }
 
     public enum ResultType {

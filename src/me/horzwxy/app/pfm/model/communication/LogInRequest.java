@@ -7,9 +7,20 @@ import me.horzwxy.app.pfm.model.data.User;
  */
 public class LogInRequest extends Request {
 
-    public User user;
+    public String accountName;
+    public String accountType;
 
     public LogInRequest( User user ) {
-        this.user = user;
+        this( user.accountName, user.accountType );
+    }
+
+    public LogInRequest( String accountName, String accountType ) {
+        this.accountName = accountName;
+        this.accountType = accountType;
+    }
+
+    @Override
+    public String getServlePattern() {
+        return "/login";
     }
 }

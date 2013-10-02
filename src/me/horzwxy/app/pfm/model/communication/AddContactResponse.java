@@ -13,6 +13,7 @@ public class AddContactResponse extends Response {
 
     public enum ResultType {
         SUCCESS,
+        NO_SUCH_USER,
         FAILED;
     }
 }

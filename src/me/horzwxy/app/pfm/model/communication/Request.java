@@ -19,4 +19,6 @@ public abstract class Request {
     public static <T extends Request> T parseRequest( String jsonString, Class< T > requestClass ) {
         return gson.fromJson( jsonString, requestClass );
     }
+
+    public abstract String getServlePattern();
 }

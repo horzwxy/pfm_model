@@ -10,4 +10,9 @@ public class GetProfileRequest extends Request {
     public GetProfileRequest( String nickname ) {
         this.nickname = nickname;
     }
+
+    @Override
+    public String getServlePattern() {
+        return "/getprofile";
+    }
 }

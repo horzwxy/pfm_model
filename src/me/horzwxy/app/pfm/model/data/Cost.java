@@ -1,16 +1,22 @@
 package me.horzwxy.app.pfm.model.data;
 
-/**
- * Created by horz on 10/2/13.
- */
 public class Cost {
-    int cost;   // in unit of 0.1 RMB Yuan
-
-    public float toYuan() {
-        return cost / 10f;
-    }
-
-    public void setCostFromYuan( float yuan ) {
-        this.cost = (int)(yuan * 10);
-    }
+	
+	int cost;	// in units of 0.1 yuan
+	
+	public Cost( int cost ) {
+		this.cost = cost;
+	}
+	
+	/**
+	 * Create from RMB Yuan
+	 * @param cost
+	 */
+	public Cost( float cost ) {
+		this.cost = ( int ) cost * 10;
+	}
+	
+	public float toYuan() {
+		return cost / 10.f;
+	}
 }

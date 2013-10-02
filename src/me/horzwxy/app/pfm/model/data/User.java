@@ -1,8 +1,6 @@
 package me.horzwxy.app.pfm.model.data;
 
-import java.io.Serializable;
-
-public class User implements PFMData, Serializable {
+public class User {
 
     public String accountName;
     public String nickname;
