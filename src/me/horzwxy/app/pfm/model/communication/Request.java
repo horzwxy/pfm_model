@@ -7,7 +7,7 @@ import com.google.gson.Gson;
  */
 public abstract class Request {
 
-    protected static Gson gson = new Gson();
+	protected static Gson gson = new Gson();
 
     public String toPostContent() {
         if( this.getClass().equals( Request.class ) ) {
@@ -21,4 +21,9 @@ public abstract class Request {
     }
 
     public abstract String getServlePattern();
+
+    @Override
+    public String toString() {
+        return gson.toJson( this );
+    }
 }

@@ -1,9 +1,17 @@
 package me.horzwxy.app.pfm.model.data;
 
-public class Cost {
+public class Cost extends PFMData {
 	
-	int cost;	// in units of 0.1 yuan
-	
+	public int cost;	// in units of 0.1 yuan
+
+    public Cost() {
+
+    }
+
+    public Cost( String costString ) {
+        this.cost = Integer.parseInt(costString);
+    }
+
 	public Cost( int cost ) {
 		this.cost = cost;
 	}
@@ -19,4 +27,9 @@ public class Cost {
 	public float toYuan() {
 		return cost / 10.f;
 	}
+
+    @Override
+    public String toString() {
+        return cost + "";
+    }
 }

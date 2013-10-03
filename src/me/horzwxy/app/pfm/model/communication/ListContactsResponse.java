@@ -11,6 +11,10 @@ public class ListContactsResponse extends Response {
 
     public ArrayList< String > friendsNicknames;
 
+    public ListContactsResponse() {
+
+    }
+
     public ListContactsResponse( UserList userList ) {
         this( userList.toNicknameList() );
     }

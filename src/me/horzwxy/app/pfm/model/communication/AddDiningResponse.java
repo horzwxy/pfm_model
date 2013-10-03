@@ -5,13 +5,17 @@ package me.horzwxy.app.pfm.model.communication;
  */
 public class AddDiningResponse extends Response {
 
-    public ResponseType type;
+    public ResultType type;
 
-    public AddDiningResponse( ResponseType type ) {
+    AddDiningResponse() {
+
+    }
+
+    public AddDiningResponse( ResultType type ) {
         this.type = type;
     }
 
-    public enum ResponseType {
+    public enum ResultType {
         SUCCESS,
         FAILED;
     }

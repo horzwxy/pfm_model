@@ -10,6 +10,10 @@ public class LogInRequest extends Request {
     public String accountName;
     public String accountType;
 
+    public LogInRequest() {
+
+    }
+
     public LogInRequest( User user ) {
         this( user.accountName, user.accountType );
     }

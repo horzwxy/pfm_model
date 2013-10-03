@@ -1,10 +1,8 @@
 package me.horzwxy.app.pfm.model.data;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
-public class Dining {
+public class Dining extends PFMData {
 
     public static final int UNDEFINED_ID = -1;
 

@@ -9,6 +9,10 @@ public class ListContactsRequest extends Request {
 
     public String nickname;
 
+    public ListContactsRequest() {
+
+    }
+
     public ListContactsRequest( User user ) {
         this( user.nickname );
     }

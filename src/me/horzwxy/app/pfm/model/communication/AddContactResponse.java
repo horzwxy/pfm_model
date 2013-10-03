@@ -7,6 +7,10 @@ public class AddContactResponse extends Response {
 
     public ResultType type;
 
+    public AddContactResponse() {
+
+    }
+
     public AddContactResponse( ResultType type ) {
         this.type = type;
     }

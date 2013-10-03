@@ -11,12 +11,16 @@ public class AddContactRequest extends Request {
     public String ownerNickname;
     public String friendNickname;
 
-    public AddContactRequest( ContactInfo info ) {
-        this( info.owner.nickname, info.friend.nickname );
+    public AddContactRequest() {
+
     }
 
-    public AddContactRequest( String ownerNickname, String friendNickname ) {
-        this.ownerNickname = ownerNickname;
+    public AddContactRequest( ContactInfo info ) {
+        this( info.owner, info.friend.nickname );
+    }
+
+    public AddContactRequest( User owner, String friendNickname ) {
+        this.ownerNickname = owner.nickname;
         this.friendNickname = friendNickname;
     }
 

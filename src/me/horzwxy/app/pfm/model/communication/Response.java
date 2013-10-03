@@ -7,7 +7,7 @@ import com.google.gson.Gson;
  */
 public abstract class Response {
 
-    protected static Gson gson = new Gson();
+	protected static Gson gson = new Gson();
 
     public String toPostContent() {
         if( this.getClass().equals( Response.class ) ) {
@@ -18,5 +18,10 @@ public abstract class Response {
 
     public static <T extends Response> T parseResponse( String jsonString, Class< T > responseClass ) {
         return gson.fromJson( jsonString, responseClass );
+    }
+
+    @Override
+    public String toString() {
+        return gson.toJson( this );
     }
 }

@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by horz on 10/2/13.
  */
-public class Bill {
+public class Bill extends PFMData {
 
     public User lender;
     public User borrower;

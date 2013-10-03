@@ -9,6 +9,10 @@ public class SetNicknameRequest extends Request {
 
     public User user;
 
+    public SetNicknameRequest() {
+
+    }
+
     public SetNicknameRequest( User user ) {
         this.user = user;
     }

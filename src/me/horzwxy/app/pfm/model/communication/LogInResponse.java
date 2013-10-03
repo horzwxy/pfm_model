@@ -10,6 +10,10 @@ public class LogInResponse extends Response {
     public ResultType type;
     public String nickname;
 
+    public LogInResponse() {
+
+    }
+
     public LogInResponse( ResultType type, String nickname ) {
         this.type = type;
         this.nickname = nickname;

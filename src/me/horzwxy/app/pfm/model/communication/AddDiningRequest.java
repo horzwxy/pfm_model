@@ -9,6 +9,10 @@ public class AddDiningRequest extends Request {
 
     public Dining dining;
 
+    public AddDiningRequest() {
+
+    }
+
     public AddDiningRequest( Dining dining ) {
         this.dining = dining;
     }

@@ -7,6 +7,10 @@ public class SetNicknameResponse extends Response {
 
     public ResultType type;
 
+    public SetNicknameResponse() {
+
+    }
+
     public SetNicknameResponse( ResultType type ) {
         this.type = type;
     }

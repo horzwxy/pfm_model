@@ -7,6 +7,10 @@ public class GetProfileRequest extends Request {
 
     public String nickname;
 
+    public GetProfileRequest() {
+
+    }
+
     public GetProfileRequest( String nickname ) {
         this.nickname = nickname;
     }
