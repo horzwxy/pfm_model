@@ -4,29 +4,29 @@ import java.util.Date;
 
 public class Dining extends PFMData {
 
-    public static final int UNDEFINED_ID = -1;
+    public static final long UNDEFINED_ID = -1;
 
-    public int id;
+    public long id;
     public Restaurant restaurant;
     public Date date;
     public Cost cost;
     public UserList participants;
-    public UserCostMap specialCosts;
-    public UserCostMap paids;
+    public CostList specialCosts;
+    public CostList paids;
     public User author;
     public DiningState state;
 
-    public Dining( int id ) {
+    public Dining( long id ) {
     	this.id = id;
     }
     
-    public Dining( int id,
+    public Dining( long id,
                    Restaurant restaurant,
                    Date date,
                    Cost cost,
                    UserList participants,
-                   UserCostMap specialCosts,
-                   UserCostMap paids,
+                   CostList specialCosts,
+                   CostList paids,
                    User author,
                    DiningState state ) {
         this.id = id;
@@ -44,14 +44,14 @@ public class Dining extends PFMData {
                    Date date,
                    Cost cost,
                    UserList participants,
-                   UserCostMap specialCosts,
-                   UserCostMap paids,
+                   CostList specialCosts,
+                   CostList paids,
                    User author ) {
         this( UNDEFINED_ID, restaurant, date, cost, participants, specialCosts, paids, author, DiningState.NOT_APPROVED_YET );
     }
 
     public Dining() {
-        this( null, null, null, new UserList(), new UserCostMap(), new UserCostMap(), null );
+        this( null, null, null, new UserList(), new CostList(), new CostList(), null );
     }
 
     public enum DiningState {

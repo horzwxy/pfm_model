@@ -19,7 +19,7 @@ public class UserList implements Serializable, Iterable<User> {
     }
 
     public UserList( ArrayList< String > nicknames ) {
-        this.users = new ArrayList<User>();
+        this();
         for( String nickname : nicknames ) {
             this.users.add(new User(nickname));
         }

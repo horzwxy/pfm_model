@@ -10,14 +10,14 @@ import me.horzwxy.app.pfm.model.data.User;
 public class ApproveDiningRequest extends Request {
 
     public String nickname;
-    public int diningId;
+    public long diningId;
     public Dining.DiningState newState;
 
     public ApproveDiningRequest() {
 
     }
 
-    public ApproveDiningRequest( String nickname, int diningId, Dining.DiningState state ) {
+    public ApproveDiningRequest( String nickname, long diningId, Dining.DiningState state ) {
         this.nickname = nickname;
         this.diningId = diningId;
         this.newState = state;

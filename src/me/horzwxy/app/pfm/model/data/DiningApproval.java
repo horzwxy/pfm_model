@@ -5,7 +5,7 @@ package me.horzwxy.app.pfm.model.data;
  */
 public class DiningApproval extends PFMData {
 
-    public int diningId;
+    public long diningId;
     public User user;
     public Dining.DiningState state;
 
@@ -13,7 +13,7 @@ public class DiningApproval extends PFMData {
 
     }
 
-    public DiningApproval( int diningId, User user, Dining.DiningState state ) {
+    public DiningApproval( long diningId, User user, Dining.DiningState state ) {
         this.diningId = diningId;
         this.user = user;
         this.state = state;
