@@ -16,6 +16,10 @@ public class Dining extends PFMData {
     public User author;
     public DiningState state;
 
+    public Dining( int id ) {
+    	this.id = id;
+    }
+    
     public Dining( int id,
                    Restaurant restaurant,
                    Date date,
@@ -43,7 +47,7 @@ public class Dining extends PFMData {
                    UserCostMap specialCosts,
                    UserCostMap paids,
                    User author ) {
-        this( UNDEFINED_ID, restaurant, date, cost, participants, specialCosts, paids, author, DiningState.UNDEFINED );
+        this( UNDEFINED_ID, restaurant, date, cost, participants, specialCosts, paids, author, DiningState.NOT_APPROVED_YET );
     }
 
     public Dining() {
@@ -53,7 +57,6 @@ public class Dining extends PFMData {
     public enum DiningState {
         NOT_APPROVED_YET,
         APPROVED,
-        REJECTED,
-        UNDEFINED;
+        REJECTED;
     }
 }
