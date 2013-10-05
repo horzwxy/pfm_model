@@ -16,6 +16,14 @@ public class Bill extends PFMData {
     public Bill() {
 
     }
+    
+    public Bill( String lenderNickname, String borrowerNickname, int cost, long id, BillState state ) {
+    	this( new User( lenderNickname ), new User( borrowerNickname ), new Cost( cost, borrowerNickname ), id, state );
+    }
+    
+    public Bill( String lenderNickname, String borrowerNickname, int cost, long id ) {
+    	this( lenderNickname, borrowerNickname, cost, id, BillState.NOT_APPROVED_YET );
+    }
 
     public Bill( User lender, User borrower, Cost cost, long id, BillState state ) {
         this.lender = lender;

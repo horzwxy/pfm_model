@@ -1,5 +1,7 @@
 package me.horzwxy.app.pfm.model.data;
 
+import java.util.Comparator;
+
 public class Cost extends PFMData {
 	
 	public int cost;	// in units of 0.1 yuan
@@ -35,5 +37,14 @@ public class Cost extends PFMData {
     @Override
     public String toString() {
         return cost + "";
+    }
+    
+    public static class CostComparator implements Comparator< Cost > {
+
+		@Override
+		public int compare(Cost o1, Cost o2) {
+			return o1.cost - o2.cost;
+		}
+    	
     }
 }
