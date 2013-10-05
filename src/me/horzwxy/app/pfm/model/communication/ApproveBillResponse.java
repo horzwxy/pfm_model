@@ -12,7 +12,7 @@ public class ApproveBillResponse extends Response {
     }
 
     public ApproveBillResponse( ResultType type ) {
-
+        this.type = type;
     }
 
     public enum ResultType {

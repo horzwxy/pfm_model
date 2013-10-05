@@ -5,21 +5,21 @@ package me.horzwxy.app.pfm.model.data;
  */
 public class BillApproval {
 
-    public User user;
-    public long diningId;
+    public User owner;
+    public long billId;
     public Bill.BillState state;
 
     public BillApproval() {
 
     }
 
-    public BillApproval( User user, long diningId ) {
-        this( user, diningId, Bill.BillState.NOT_APPROVED_YET );
+    public BillApproval( User owner, long diningId ) {
+        this( owner, diningId, Bill.BillState.NOT_APPROVED_YET );
     }
 
-    public BillApproval( User user, long diningId, Bill.BillState state ) {
-        this.user = user;
-        this.diningId = diningId;
+    public BillApproval( User owner, long billId, Bill.BillState state ) {
+        this.owner = owner;
+        this.billId = billId;
         this.state = state;
     }
 }

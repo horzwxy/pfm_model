@@ -1,5 +1,7 @@
 package me.horzwxy.app.pfm.model.communication;
 
+import me.horzwxy.app.pfm.model.data.Bill;
+import me.horzwxy.app.pfm.model.data.BillApproval;
 import me.horzwxy.app.pfm.model.data.User;
 
 /**
@@ -7,16 +9,20 @@ import me.horzwxy.app.pfm.model.data.User;
  */
 public class ClearBillRequest extends Request {
 
-    public User user;
-    public long diningId;
+    public String nickname;
+    public long billId;
 
     public ClearBillRequest() {
 
     }
 
-    public ClearBillRequest( User user, long diningId ) {
-        this.user = user;
-        this.diningId = diningId;
+    public ClearBillRequest( User user, long billId ) {
+        this.nickname = user.nickname;
+        this.billId = billId;
+    }
+    
+    public BillApproval getBa() {
+    	return new BillApproval( new User( nickname ), billId, Bill.BillState.CLEARED );
     }
 
     @Override
