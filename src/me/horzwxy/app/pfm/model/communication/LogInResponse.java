@@ -10,9 +10,11 @@ public class LogInResponse extends Response {
     public ResultType type;
     public String nickname;
 
-    public LogInResponse() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public LogInResponse() {}
 
     public LogInResponse( ResultType type, String nickname ) {
         this.type = type;
@@ -20,8 +22,8 @@ public class LogInResponse extends Response {
     }
 
     public enum ResultType {
-        SUCCESS,
-        FAILED,
-        SUCCESS_BUT_FIRST;
+        SUCCEED,
+        FAIL,
+        NEED_REGISTER;
     }
 }

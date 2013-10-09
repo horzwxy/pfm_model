@@ -10,9 +10,11 @@ public class LogInRequest extends Request {
     public String accountName;
     public String accountType;
 
-    public LogInRequest() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public LogInRequest() {}
 
     public LogInRequest( User user ) {
         this( user.accountName, user.accountType );

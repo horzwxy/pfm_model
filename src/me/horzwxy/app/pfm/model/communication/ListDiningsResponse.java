@@ -11,9 +11,11 @@ public class ListDiningsResponse extends Response {
 
     public ArrayList<Dining> dinings;
 
-    public ListDiningsResponse() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public ListDiningsResponse() {}
 
     public ListDiningsResponse( ArrayList<Dining> dinings ) {
         this.dinings = dinings;

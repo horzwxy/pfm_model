@@ -9,9 +9,11 @@ public class ListContactsRequest extends Request {
 
     public String nickname;
 
-    public ListContactsRequest() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public ListContactsRequest() {}
 
     public ListContactsRequest( User user ) {
         this( user.nickname );

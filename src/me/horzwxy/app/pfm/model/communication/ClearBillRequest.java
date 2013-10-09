@@ -12,9 +12,11 @@ public class ClearBillRequest extends Request {
     public String nickname;
     public long billId;
 
-    public ClearBillRequest() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public ClearBillRequest() {}
 
     public ClearBillRequest( User user, long billId ) {
         this.nickname = user.nickname;

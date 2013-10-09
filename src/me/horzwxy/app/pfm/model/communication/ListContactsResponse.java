@@ -11,9 +11,11 @@ public class ListContactsResponse extends Response {
 
     public ArrayList< String > friendsNicknames;
 
-    public ListContactsResponse() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public ListContactsResponse() {}
 
     public ListContactsResponse( UserList userList ) {
         this( userList.toNicknameList() );

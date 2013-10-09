@@ -7,16 +7,18 @@ public class ApproveBillResponse extends Response {
 
     public ResultType type;
 
-    public ApproveBillResponse() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public ApproveBillResponse() {}
 
     public ApproveBillResponse( ResultType type ) {
         this.type = type;
     }
 
     public enum ResultType {
-        SUCCESS,
-        FAILED;
+        SUCCEED,
+        FAIL;
     }
 }

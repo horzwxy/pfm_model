@@ -7,17 +7,19 @@ public class AddContactResponse extends Response {
 
     public ResultType type;
 
-    public AddContactResponse() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public AddContactResponse() {}
 
     public AddContactResponse( ResultType type ) {
         this.type = type;
     }
 
     public enum ResultType {
-        SUCCESS,
+        SUCCEED,
         NO_SUCH_USER,
-        FAILED;
+        FAIL;
     }
 }

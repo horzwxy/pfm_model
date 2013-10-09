@@ -1,5 +1,6 @@
 package me.horzwxy.app.pfm.model.communication;
 
+import me.horzwxy.app.pfm.model.data.Bill;
 import me.horzwxy.app.pfm.model.data.BillApproval;
 
 /**
@@ -7,14 +8,20 @@ import me.horzwxy.app.pfm.model.data.BillApproval;
  */
 public class ApproveBillRequest extends Request {
 
-    public BillApproval ba;
+	public String nickname;
+	public long billId;
+	public Bill.BillState state;
 
-    public ApproveBillRequest() {
-
-    }
+	/**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public ApproveBillRequest() {}
 
     public ApproveBillRequest( BillApproval ba ) {
-        this.ba = ba;
+        this.nickname = ba.owner.nickname;
+        this.billId = ba.billId;
+        this.state = ba.state;
     }
 
     @Override

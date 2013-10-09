@@ -9,9 +9,11 @@ public class SetNicknameRequest extends Request {
 
     public User user;
 
-    public SetNicknameRequest() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public SetNicknameRequest() {}
 
     public SetNicknameRequest( User user ) {
         this.user = user;

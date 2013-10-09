@@ -7,16 +7,18 @@ public class AddDiningResponse extends Response {
 
     public ResultType type;
 
-    AddDiningResponse() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public AddDiningResponse() {}
 
     public AddDiningResponse( ResultType type ) {
         this.type = type;
     }
 
     public enum ResultType {
-        SUCCESS,
-        FAILED;
+        SUCCEED,
+        FAIL;
     }
 }

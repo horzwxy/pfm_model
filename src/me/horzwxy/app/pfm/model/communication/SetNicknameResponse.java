@@ -7,9 +7,11 @@ public class SetNicknameResponse extends Response {
 
     public ResultType type;
 
-    public SetNicknameResponse() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public SetNicknameResponse() {}
 
     public SetNicknameResponse( ResultType type ) {
         this.type = type;

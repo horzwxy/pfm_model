@@ -13,9 +13,11 @@ public class ApproveDiningRequest extends Request {
     public long diningId;
     public Dining.DiningState newState;
 
-    public ApproveDiningRequest() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public ApproveDiningRequest() {}
 
     public ApproveDiningRequest( String nickname, long diningId, Dining.DiningState state ) {
         this.nickname = nickname;

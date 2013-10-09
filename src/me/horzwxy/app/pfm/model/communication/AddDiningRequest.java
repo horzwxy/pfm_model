@@ -9,9 +9,11 @@ public class AddDiningRequest extends Request {
 
     public Dining dining;
 
-    public AddDiningRequest() {
-
-    }
+    /**
+	 * Leave for gson to instantialize this class.
+	 * For coder, never try to call this constructor.
+	 */
+    public AddDiningRequest() {}
 
     public AddDiningRequest( Dining dining ) {
         this.dining = dining;
