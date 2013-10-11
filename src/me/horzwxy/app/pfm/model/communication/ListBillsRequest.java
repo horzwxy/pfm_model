@@ -12,7 +12,7 @@ public class ListBillsRequest extends Request {
 	
 	public String nickname;
 	public Bill.BillState state;
-	public long idBound;
+	public long idBound;	// request for bills earlier than bill with idBound
 	
 	/**
 	 * Leave for gson to instantialize this class.

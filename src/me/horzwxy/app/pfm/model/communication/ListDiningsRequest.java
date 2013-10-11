@@ -7,7 +7,13 @@ import me.horzwxy.app.pfm.model.data.User;
  */
 public class ListDiningsRequest extends Request {
 
+	/**
+	 * -1 stands for fetching latest dinings
+	 */
+	public final static long UNDEFINED_ID = -1l;
+	
     public String nickname;
+    public long diningId;	// request for dinings no late than the one with this diningId
 
     /**
 	 * Leave for gson to instantialize this class.

@@ -5,11 +5,12 @@ import java.util.ArrayList;
 import me.horzwxy.app.pfm.model.data.UserList;
 
 /**
+ * List all the contacts, not only the latest created ones.
  * Created by horz on 10/2/13.
  */
 public class ListContactsResponse extends Response {
 
-    public ArrayList< String > friendsNicknames;
+    public ArrayList< String > friendsNicknames;	// null stands for no contacts to show
 
     /**
 	 * Leave for gson to instantialize this class.

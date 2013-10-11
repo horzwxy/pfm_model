@@ -6,7 +6,7 @@ import me.horzwxy.app.pfm.model.data.Bill;
 
 public class ListBillsResponse extends Response {
 	
-	public ArrayList<Bill> bills;
+	public ArrayList<Bill> bills;	// null stands for no bills to show
 
 	/**
 	 * Leave for gson to instantialize this class.

@@ -9,7 +9,7 @@ import me.horzwxy.app.pfm.model.data.Dining;
  */
 public class ListDiningsResponse extends Response {
 
-    public ArrayList<Dining> dinings;
+    public ArrayList<Dining> dinings;	// null stands for no dinings to show
 
     /**
 	 * Leave for gson to instantialize this class.
