@@ -1,7 +1,5 @@
 package me.horzwxy.app.pfm.model.data;
 
-import com.google.gson.Gson;
-
 public class User extends PFMData {
 
     public String accountName;
